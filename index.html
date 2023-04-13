@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonlight-website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Work</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png" id="stars">
+        <img src="moon (1).png" id="moon">
+        <img src="mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front (1).png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling effects</h2>
+        <p>Parallax scrolling is a popular technique used in web design to create an illusion of depth and movement by displaying multiple layers of content moving at different speeds. This effect can be achieved by manipulating the position of each layer based on the user's scroll position, creating a visually engaging and dynamic website experience.
+
+            The term "parallax" refers to the apparent shift in position of an object when viewed from different angles. In web design, parallax scrolling creates the illusion of depth by displaying multiple layers of content moving at different speeds. This effect can be achieved using CSS, JavaScript, or a combination of both. <br><br>
+            One of the main advantages of parallax scrolling is its ability to make a website more engaging and memorable. By incorporating dynamic movement into the design, users are more likely to stay on the page longer and interact with the content. This can be particularly effective for websites that showcase products, services, or portfolios, as it allows visitors to explore the content in a more interactive and immersive way.
+
+            Another advantage of parallax scrolling is its versatility. The technique can be used in a variety of ways, from subtle animations to more complex multi-layered designs. This means that it can be tailored to suit the needs of different types of websites and content, and can be used to create a wide range of effects and moods.<br><br>
+            However, it is important to note that parallax scrolling is not without its drawbacks. One of the main challenges of implementing the technique is ensuring that it does not negatively impact website performance or accessibility. Excessive use of parallax scrolling can lead to slow loading times, particularly on mobile devices or slower internet connections, and can also make it difficult for users to navigate the site.
+
+In order to avoid these issues, it is important to use parallax scrolling in a strategic and intentional way. This might involve limiting the number of layers used, optimizing image sizes and file formats, and testing the design across different devices and internet speeds.
+            <br><br>
+            Another important consideration when using parallax scrolling is the user experience. While the effect can be visually engaging, it is important to ensure that it does not detract from the usability of the site. This might involve using clear and intuitive navigation, providing clear calls-to-action, and avoiding excessive animation or movement.
+
+            One of the most common uses of parallax scrolling is in website headers, where it can be used to create a dynamic and eye-catching introduction to the site. This might involve using a background image or video that scrolls at a different speed to the foreground content, creating a sense of depth and movement.
+            <br><br>
+            Parallax scrolling can also be used to highlight specific pieces of content or information on a page. By animating certain elements or using different layers to create a visual hierarchy, designers can draw attention to key messages and encourage users to engage with the content.
+
+            Another way to use parallax scrolling is to create a sense of storytelling or narrative on a website. By using multiple layers of content to reveal different parts of a story or message, designers can create a more immersive and engaging experience for users.
+            
+            In addition to its use in web design, parallax scrolling can also be used in other digital media such as video games and animations. By using multiple layers to create a sense of depth and movement, designers can create more dynamic and engaging experiences for users.
+        </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header=document.querySelector('header');
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value *1.5 +'px';
+            header.style.top = value * 0.5 + 'px';
+
+        })
+    </script>
+</body>
+
+</html>
